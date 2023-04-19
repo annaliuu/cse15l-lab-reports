@@ -1,7 +1,7 @@
 # Lab Report 1
 
 ## Step 1 - Installing VScode
-To install VScode, you go to the [Visual Studio Code website](https://code.visualstudio.com/) and follow the download instructions. Once it installs, you can open up the program and you'll see this image below:
+To install VScode, you go to the [Visual Studio Code website](https://code.visualstudio.com/) and follow the [download](https://code.visualstudio.com/Download) instructions. There will be different download options for you to choose from depending on your OS (mac, windows, etc). Once it installs, you can open up the program and you'll see something similar to this image below:
 ![image](sc1.png)
 
 ## Step 2 - Remotely Connecting
@@ -18,3 +18,5 @@ Now, you have successfully connected to the remote server and any conmmand that 
 ## Step 3 - Trying Some Commands
 There are various commands that you can run through the terminal, such as `cd`, `ls`,` ls -lat`, `pwd`, among many others. Here is an example of what running these commands would look like:
 ![image](sc3.png)
+
+For example, running `cd` stands for "change directory", and changes the directory you are currently in, running `ls` lists all the folders and files in your current directory, and running `pwd` prints the path to the current working directory.
