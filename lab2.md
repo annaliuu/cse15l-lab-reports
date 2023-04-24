@@ -40,9 +40,11 @@ class StringServer {
 
 Here are the 2 screenshots of using `/add-message`:
 ![image](add-message_1.png)
+
 For this screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=hello`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
 
 ![image](add-message_2.png)
+
 Similar to the first screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=world`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
 
 
