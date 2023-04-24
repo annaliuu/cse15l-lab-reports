@@ -1,4 +1,49 @@
 ## Part 1
+This is the code block for my StringServer program:
+```
+class Handler implements URLHandler {
+    private String res = "";
+
+    public String handleRequest(URI url) {
+        String[] path_raw = url.getPath().split("/");
+        String[] parameters = url.getQuery() != null ? url.getQuery().split("=") : new String[0];
+        int count = 0;
+        String[] path = new String[path_raw.length];
+        
+        for (int i = 0; i < path_raw.length; i++) {
+            if (!path_raw[i].isEmpty()) {
+                path[count] = path_raw[i];
+                count++;
+            }
+        }
+
+        if ((path[0].equals("add-message")) && (parameters[0].equals("s"))) {            
+            res += parameters[1] + "\n";
+            return res;
+        }
+        return "bad path";
+    }
+}
+
+class StringServer {
+    public static void main(String[] args) throws IOException {
+        if (args.length == 0) {
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+        Server.start(port, new Handler());
+    }
+}
+```
+
+Here are the 2 screenshots of using `/add-message`:
+![image](add-message_1.png)
+For this screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=hello`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
+
+![image](add-message_2.png)
+Similar to the first screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=world`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
 
 
 ## Part 2
