@@ -9,6 +9,7 @@ Output:
 ```
 This command helps us find and see whether the name of the txt file we're trying to find exists and can be accessed.
 
+
 Command: `find ./technical/911report -name "*.txt"`
 
 Output:
@@ -32,6 +33,7 @@ Output:
 ./technical/911report/chapter-11.txt
 ```
 This command helps us find all the files that end with .txt within the 911report folder. This could be helpful when we don't know the specific name of the file we're looking for.
+
 
 
 ### `-type` option:
@@ -59,6 +61,7 @@ Output:
 ```
 This command finds all the files that end with .txt within the 911report subdirectory. This command is helpful when you don't know the specific name of a document.
 
+
 Command: `find ./technical -type d`
 
 Output:
@@ -76,6 +79,7 @@ Output:
 ./technical/911report
 ```
 This command finds all the subdirectories within the ./technical directory and lists out all of them. This allows us to view all the subdirectories within a specific directory.
+
 
 
 ### `-maxdepth` option:
@@ -105,6 +109,7 @@ This command finds all the .txt files with a maximum depth of 2 directories deep
 
 Command: `find ./technical/government/Alcohol_Problems -mindepth 1 -name "*.txt"`
 
+
 Output:
 ```
 ./technical/government/Alcohol_Problems/Session2-PDF.txt
@@ -113,6 +118,7 @@ Output:
 ./technical/government/Alcohol_Problems/Session4-PDF.txt
 ```
 This command finds all the .txt files with a minimum depth of 2 directories deep. This command helps you ensure that you're finding all the files within a certain number of subdirectories.
+
 
 
 ### `-size` option:
@@ -130,6 +136,7 @@ Output:
 ./technical/911report/chapter-11.txt
 ```
 This command finds all the files within the 911report directory that have a size of less than 100 kilobytes. This command is useful because it can filter on file sizes.
+
 
 Command: `find ./technical/911report -size +100k`
 
