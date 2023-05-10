@@ -41,11 +41,11 @@ class StringServer {
 Here are the 2 screenshots of using `/add-message`:
 ![image](add-message_1.png)
 
-For this screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=hello`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
+For this screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=hello`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed. This string `res` gets changed and updated everytime the handleRequest method is called.
 
 ![image](add-message_2.png)
 
-Similar to the first screenshot, the handleRequest method is called, which takes in the argument specified as `url`. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=world`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed.
+Similar to the first screenshot, the handleRequest method is called, which takes in the argument specified as `url`. We then split that url on "/" and get the strings after "=", which represents the string we are adding. When called on this argument, this URI object represents the entire string `localhost:5000/add-message?s=world`. The relevant field of the class is the string `res`, which gets updated to be the message directly after the `s` in the url once the specific request is executed. This string `res` gets changed and updated everytime the handleRequest method is called.
 
 
 ## Part 2
@@ -70,14 +70,14 @@ public void testReverseInPlace() {
 ```
 
 This is the symptom, or the output of running the 2 Junit tests above.
-Buggy input:
+Failure-inducing input:
 ![image](buggy_testReversed.png)
 
-Correct input:
+Non-failure inducing input:
 ![image](correct_testReversed.png)
 
 These are the before and after code blocks of the bug for the reverseInPlace method.
-Before (buggy):
+Before (failure-inducing):
 ```
 static void reverseInPlace(int[] arr) {
   for(int i = 0; i < arr.length; i += 1) {
@@ -96,6 +96,8 @@ static void reverseInPlace(int[] arr) {
   }
 }
 ```
+This new code block fixes the bug because it correctly reverses the entire input array. Instead of overriding the leftmost values directly with the rightmost values, the new code block uses a temporary variable to store the original value, enabling the function to successfully swap the left and right values. This way, some values are not getting overwritten.
+
 
 ## Part 3
 From both last week's and this week's lab, I learned how to fork a page from Github and how to use Github Desktop to clone a repository. Prior to this class, I didn't really have much experience with using Github Desktop or Github Pages, so I enjoyed getting hands on experience with this through this class.
