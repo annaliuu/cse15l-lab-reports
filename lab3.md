@@ -158,7 +158,9 @@ This command finds all the files within the 911report directory that have a size
 
 
 *Source: All commands were found through ChatGPT*
+
 *Input I gave ChatGPT: "give me examples of find command line options"*
+
 *Output of ChatGPT:*
 ![image](output-1.png)
 ![image](output-2.png)
